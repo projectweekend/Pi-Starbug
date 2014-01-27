@@ -36,6 +36,7 @@ def stash_humidity(humidity_value):
 def worker():
     dhtreader.init()
     # try this multiple times because we don't always get data on first attempt
+    # the python driver for this sensor is still experimental
     for x in range(10):
         result = get_sensor_data()
         if result:
