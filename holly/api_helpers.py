@@ -1,24 +1,23 @@
 import utils
 
 
-def send_humidity(humidity_value):
-    url = "http://holly.local/api/indoor/humidity"
-    humidity_data = {
-        'percent': humidity_value
+def send_bulk_humidity_data(humidity_data_list):
+    url = "http://holly.local/api/indoor/humidity/bulk"
+    post_data = {
+        'humidity_data': humidity_data_list
     }
-    response = utils.make_json_post(url, humidity_data)
+    response = utils.make_json_post(url, post_data)
     if response != 201:
         # todo logging
         pass
 
 
-def send_temperature(temperature_value):
+def send_bulk_temperature_data(temperature_data_list):
     url = "http://holly.local/api/indoor/temperature" 
-    temperature_data = {
-        'celsius': temperature_value,
-        'fahrenheit': utils.celsius_to_fahrenheit(temperature_value)
+    post_data = {
+        'temperature_data': temperature_data_list
     }
-    response = utils.make_json_post(url, temperature_data)
+    response = utils.make_json_post(url, post_data)
     if response != 201:
         # todo logging
         pass
