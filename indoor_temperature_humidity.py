@@ -1,12 +1,11 @@
 import datetime
-import os
 
 import dhtreader
 import utils
 
 
-TEMPERATURE_SENSOR_TYPE = int(os.getenv('TEMPERATURE_SENSOR_TYPE', 0))
-TEMPERATURE_SENSOR_PIN = int(os.getenv('TEMPERATURE_SENSOR_PIN', 0))
+TEMPERATURE_SENSOR_TYPE = 22
+TEMPERATURE_SENSOR_PIN = 4
 
 
 def send_humidity(humidity_value):
