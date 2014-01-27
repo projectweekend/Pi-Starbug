@@ -39,6 +39,7 @@ def worker():
     result = dhtreader.read(TEMPERATURE_SENSOR_TYPE, TEMPERATURE_SENSOR_PIN)
     send_temperature(result[0])
     send_humidity(result[1])
+    return
 
 
 if __name__ == "__main__":
