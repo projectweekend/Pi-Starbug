@@ -35,6 +35,7 @@ def worker():
     if result:
         send_temperature(result[0])
         send_humidity(result[1])
+        print "Result was empty"
     return
 
 
