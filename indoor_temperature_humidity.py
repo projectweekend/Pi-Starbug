@@ -1,5 +1,3 @@
-import datetime
-
 import dhtreader
 import utils
 
@@ -11,7 +9,6 @@ TEMPERATURE_SENSOR_PIN = 4
 def send_humidity(humidity_value):
     url = "http://holly.local/api/indoor/humidity"
     humidity_data = {
-        'date': datetime.datetime.utcnow(),
         'percent': humidity_value
     }
     response = utils.make_json_post(url, humidity_data)
@@ -23,7 +20,6 @@ def send_humidity(humidity_value):
 def send_temperature(temperature_value):
     url = "http://holly.local/api/indoor/temperature" 
     temperature_data = {
-        'date': datetime.datetime.utcnow(),
         'celsius': temperature_value,
         'fahrenheit': utils.celsius_to_fahrenheit(temperature_value)
     }
