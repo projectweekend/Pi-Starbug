@@ -9,7 +9,8 @@ def send_bulk_humidity_data(humidity_data_list):
     response = utils.make_json_post(url, post_data)
     if response != 201:
         # todo logging
-        pass
+        return False
+    return True
 
 
 def send_bulk_temperature_data(temperature_data_list):
@@ -20,4 +21,5 @@ def send_bulk_temperature_data(temperature_data_list):
     response = utils.make_json_post(url, post_data)
     if response != 201:
         # todo logging
-        pass
+        return False
+    return True
