@@ -1,1 +1,1 @@
-from stasher import *
+from stash import *

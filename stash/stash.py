@@ -1,7 +1,7 @@
 import os
 import pickle
 
-import stash.settings as stash_settings
+import settings as stash_settings
 
 
 class Stash(object):
