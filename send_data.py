@@ -3,17 +3,17 @@ from stash import Stash
 
 
 def process_temperature_data():
-    stash = Stash("indoor_temperature")
-    data_created = holly.send_bulk_temperature_data(stash.data)
+    temperature_stash = Stash("indoor_temperature")
+    data_created = holly.send_bulk_temperature_data(temperature_stash.data)
     if data_created:
-        stash.empty()
+        temperature_stash.empty()
 
 
 def process_humidity_data():
-    stash = Stash("indoor_humidity")
-    data_created = holly.send_bulk_humidity_data(stash.data)
+    humidity_stash = Stash("indoor_humidity")
+    data_created = holly.send_bulk_humidity_data(humidity_stash.data)
     if data_created:
-        stash.empty()
+        humidity_stash.empty()
 
 
 def worker():
