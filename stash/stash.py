@@ -5,12 +5,11 @@ import settings as stash_settings
 
 
 class Stash(object):
-
-    _file = None
-    _file_name = ""
-    data = []
     
     def __init__(self, file_name):
+        self._file = None
+        self._file_name = ""
+        self.data = []
         self._build_file_name(file_name)
         self._load_data()
         super(Stash, self).__init__()
