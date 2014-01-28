@@ -14,7 +14,7 @@ def send_bulk_humidity_data(humidity_data_list):
 
 
 def send_bulk_temperature_data(temperature_data_list):
-    url = "http://holly.local/api/indoor/temperature" 
+    url = "http://holly.local/api/indoor/temperature/bulk" 
     post_data = {
         'temperature_data': temperature_data_list
     }
