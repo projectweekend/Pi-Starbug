@@ -15,22 +15,22 @@ def get_sensor_data():
 
 
 def stash_temperature(temperature_value):
-    stash = Stash("indoor_temperature")
+    temperature_stash = Stash("indoor_temperature")
     temperature_data = {
         'date': datetime.datetime.utcnow().isoformat(),
         'celsius': temperature_value,
         'fahrenheit': utils.celsius_to_fahrenheit(temperature_value)
     }
-    stash.add(temperature_data)
+    temperature_stash.add(temperature_data)
 
 
 def stash_humidity(humidity_value):
-    stash = Stash("indoor_humidity")
+    humidity_stash = Stash("indoor_humidity")
     humidity_data = {
         'date': datetime.datetime.utcnow().isoformat(),
         'percent': humidity_value
     }
-    stash.add(humidity_data)
+    humidity_stash.add(humidity_data)
 
 
 def worker():
