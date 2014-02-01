@@ -1,4 +1,4 @@
 0 * * * * /home/pi/cron_jobs/send_system_temperature.sh
-*/10 * * * * /home/pi/cron_jobs/collect_temperature_humidity.sh
-15 * * * * /home/pi/cron_jobs/send_data.sh
-45 * * * * /home/pi/cron_jobs/send_data.sh
+*/15 * * * * /home/pi/cron_jobs/collect_temperature_humidity.sh
+20 * * * * /home/pi/cron_jobs/send_data.sh
+50 * * * * /home/pi/cron_jobs/send_data.sh
