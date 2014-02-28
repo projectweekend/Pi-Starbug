@@ -20,3 +20,12 @@ def send_bulk_temperature_data(temperature_data_list):
         # todo logging
         return False
     return True
+
+
+def send_bulk_system_temperature_data(temperature_data_list):
+    post_data = json.dumps({'temperature_data': temperature_data_list})
+    response = API.starbug.temperature.bulk.POST(data=post_data)
+    if response.status_code != 201:
+        # todo logging
+        return False
+    return True    
