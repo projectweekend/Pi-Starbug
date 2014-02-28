@@ -1,10 +1,12 @@
+import json
 import subprocess
+from hammock import Hammock
 
 import utils
 
 
 SHELL_COMMAND = ["/opt/vc/bin/vcgencmd", "measure_temp"]
-API_URL = "http://holly.local/api/starbug/temperature"
+API = Hammock('http://holly.local/api')
 
 
 def get_system_temp():
@@ -16,8 +18,8 @@ def get_system_temp():
 
 def worker():
     system_temperature = get_system_temp()
-    response = utils.make_json_post(API_URL, system_temperature)
-    if response != 201:
+    response = API.starbug.temperature.POST(data=json.dumps(system_temperature))
+    if response.status_code != 201:
         # TODO...logging
         pass
     return
