@@ -51,3 +51,6 @@ class Stash(object):
     def empty(self):
         self.data = []
         self._commit_data()
+
+    def close(self):
+        self._file.close()    
