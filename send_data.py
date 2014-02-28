@@ -16,9 +16,17 @@ def process_humidity_data():
         humidity_stash.empty()
 
 
+def process_system_temperature_data():
+    system_temperature_stash = Stash("system_temperature")
+    data_created = holly.send_bulk_system_temperature_data(system_temperature_stash.data)
+    if data_created:
+        system_temperature_stash.empty()
+
+
 def worker():
     process_temperature_data()
     process_humidity_data()
+    process_system_temperature_data()
 
 
 if __name__ == "__main__":
