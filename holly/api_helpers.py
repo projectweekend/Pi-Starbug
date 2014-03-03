@@ -39,7 +39,7 @@ def send_bulk_temperature_data(temperature_data_list):
 
 def send_bulk_system_temperature_data(temperature_data_list):
     post_data = json.dumps({'temperature_data': temperature_data_list})
-    response = API.starbug.temperature.bulk.POST(data=post_data, headers=API_HEADERS)
+    response = API.system.temperature.bulk.POST(data=post_data, headers=API_HEADERS)
     if response.status_code != 201:
         send_status_message('Starbug', 'Sending of bulk system temperature data failed.')
         return False
